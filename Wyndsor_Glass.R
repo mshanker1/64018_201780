@@ -18,11 +18,18 @@ solve(lprec)
 get.objective(lprec) * -1
 get.variables(lprec)
 get.constraints(lprec)
+get.sensitivity.objex(lprec)
+get.sensitivity.rhs(lprec)
+#rm(lprec)
 
 # Now, let's use the lp format to imput the model
 # See http://lpsolve.sourceforge.net/5.5/index.htm for reference
 
 x <- read.lp("Wyndsor.lp")
+x
 solve(x)
 get.objective(x)
-get.sensitivity.obj(x)
+get.variables(x)
+get.constraints(x)
+get.sensitivity.objex(x)
+get.sensitivity.rhs(x)
