@@ -33,3 +33,14 @@ get.variables(x)
 get.constraints(x)
 get.sensitivity.objex(x)
 get.sensitivity.rhs(x)
+
+# Let us solve the dual now
+
+y <- read.lp("Wyndsor_dual.lp")
+y
+solve(y)
+get.objective(y)
+get.variables(y)
+get.constraints(y)
+get.sensitivity.objex(y)
+get.sensitivity.rhs(y)
