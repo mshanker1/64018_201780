@@ -1,0 +1,47 @@
+---
+title: "Goal Programming"
+output: html_notebook
+---
+
+Slides for this are at https://docs.google.com/presentation/d/1MJhcyh4Gb2EZdZdLl5kOM_TTEJrgjpf0bYygyOBBb5c/edit?usp=sharing
+
+```{r}
+library(lpSolveAPI)
+x <- read.lp("dewright.lp")
+x
+solve(x)
+get.objective(x)
+get.constraints(x)
+get.variables(x)
+```
+
+Now, let us consider preemptive goal programming with sequential approach
+```{r}
+y <- read.lp("dewright_1.lp")
+y
+solve(y)
+get.objective(y)
+get.constraints(y)
+get.variables(y)
+get.basis(y)
+```
+
+As there are multiple optimal solutions, we use the goals from stage 1 as constraints. Note that y2p and y3p are zero.
+```{r}
+z <- read.lp("dewright_2.lp")
+z
+solve(z)
+get.objective(z)
+get.constraints(z)
+get.variables(z)
+```
+
+Alternativel, we can do the above two steps with one LP by using the big M method. Change the penalty for the first goals to be large.
+```{r}
+k <- read.lp("dewright_3.lp")
+k
+solve(k)
+get.objective(k)
+get.constraints(k)
+get.variables(k)
+```
