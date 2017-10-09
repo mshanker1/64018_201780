@@ -1,5 +1,5 @@
 /* Objective Function */
-max: 15 u1 + 25 u2;
+max: 23 u1 + 23 u2;
 
 /* Constraints */
 10 u1 + 31 u2 - 100 v1 <= 0;
