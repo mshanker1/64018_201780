@@ -1,0 +1,33 @@
+---
+title: "Network Flows"
+output: html_notebook
+---
+
+Let us solve the shortest path problem
+```{r}
+sp <- read.lp("SP.lp")
+sp
+solve(sp)
+get.objective(sp)
+get.constraints(sp)
+get.variables(sp)
+```
+Solve the minimum spanning tree
+```{r}
+mst <- read.lp("MST.lp")
+mst
+solve(mst)
+get.objective(mst)
+get.constraints(mst)
+get.variables(mst)
+```
+Solve the maximum flow problem
+```{r}
+mf <- read.lp("mf.lp")
+mf
+solve(mf)
+get.objective(mf)
+get.constraints(mf)
+get.variables(mf)
+```
+
